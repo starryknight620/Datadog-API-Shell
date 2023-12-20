@@ -14,11 +14,15 @@ brew install jq
 
 -DD_APP_KEY  
 
+Download and run
+
+```
+$ chmod +x get_test.sh
+$ chmod +x synthetics_api.sh
+$ chmod +x synthetics_bulk_pause.sh
+
+$ ./<SH file name here>
+```
+
 ##Notes
-In the file `synthetics_api.sh` this will create synthetic tests for you on some hard coded ports.
-You may change this array of ports or have it read from a file of port numbers
-Feel free to also change the type of test you're creating, subtype, message, name, etc.
-You may specify as few or as many locations, including your own private locations (PLs) as you wish
-```
-for public_id in `cat ports.txt` 
-```
+Please read the messages in the scripts when running them
