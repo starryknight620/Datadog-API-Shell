@@ -1,30 +1,26 @@
 ## Parameters and prompts
-echo "Enter your name: " 
-read NAME
+read -p "Enter your name: `echo '\n> '` " NAME
 
-read -s -p "Enter your Datadog API Key: " DD_API_KEY
-echo "\n"
+read -s -p "Enter your Datadog API Key: `echo '\n> '`" DD_API_KEY
 
-read -s -p "Enter your Datadog Application Key: " DD_APP_KEY
-echo "\n"
+read -s -p "Enter your Datadog Application Key: `echo '\n> '`" DD_APP_KEY
 
-read -p "Enter the hostname you wish to test against: " THEHOST
-echo "\n"
+read -p "Enter the hostname you wish to test against: `echo '\n> '`" THEHOST
 
-read -p "Enter a timeout value for your test: " TIMEOUT
-echo "\n"
+read -p "Enter a timeout value for your test: `echo '\n> '`" TIMEOUT
 
-read -p "Enter a filename with the ports (one port # per line) you wish to create tests on: " FILENAME
-echo "\n"
+read -p "Enter a filename with the ports (one port # per line) you wish to create tests on: `echo '\n> '`" FILENAME
 
-echo "This test won't work if you don't have a valid file called" $FILENAME "with the port numbers entered correctly"
+echo "This test won't work if you don't have a valid file called" $FILENAME 
+echo "with the port numbers entered correctly"
 echo "\n"
 
 echo "Thank you, "$NAME"! We'll create your Synthetic API tests shortly\n"
 echo "(no results or errors returned? 
 Make sure you're entering the right keys 
 and you have synthetic tests present
-and make sure you haven't hit your quotas for number of tests)\n"
+and make sure you haven't hit your 
+quotas for number of tests)\n"
 
 ## Create an API test.
 ## Pre-requisites: 
@@ -38,7 +34,7 @@ if [ -f "$FILENAME" ];
         for THEPORT in `cat $FILENAME`
         do  
             echo "Creating Synthetic API TCP test #" $THEPORT "\n"
-            curl -X POST "https://api.datadoghq.com/api/v1/synthetics/tests/api" \
+            curl -X POST "https://naveen.datadoghq.com/api/v1/synthetics/tests/api" \
             -H "Accept: application/json" \
             -H "Content-Type: application/json" \
             -H "DD-API-KEY: ${DD_API_KEY}" \

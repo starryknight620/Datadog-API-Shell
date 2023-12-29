@@ -1,23 +1,18 @@
 #Parameters and prompts
 
-read -p "Enter your name: " NAME
-echo "\n"
+read -p "Enter your name: `echo '\n> '`" NAME
 
-read -s -p "Enter your Datadog API Key: " DD_API_KEY 
-echo "\n"
+read -s -p "Enter your Datadog API Key: `echo '\n> '`" DD_API_KEY 
 
-read -s -p "Enter your Datadog Application Key: " DD_APP_KEY 
-echo "\n"
+read -s -p "Enter your Datadog Application Key: `echo '\n> '`" DD_APP_KEY 
 
-read -p "Enter the filename containing a list of public IDs for your Synthetic tests: " FILENAME 
-echo "\n"
+read -p "Enter the filename containing a list of public IDs for your Synthetic tests: `echo '\n> '`" FILENAME 
 
-echo "For this to work, ensure you have a file called" $FILENAME "\n" 
-echo "with each public ID on a separate line" "\n"
+echo "For this to work, ensure you have a file called" $FILENAME 
+echo "with each public ID on a separate line" 
 echo "in the directory where you are running this from!" "\n"
 
-read -p "Enter a status for the tests (live|paused): " STATUS
-echo "\n"
+read -p "Enter a status for the tests (live|paused): `echo '\n> '`" STATUS
 
 ## Create an API test.
 ## Pre-requisites: 
