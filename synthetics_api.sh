@@ -26,7 +26,7 @@ quotas for number of tests)\n"
 ## Pre-requisites: 
 #curl is working properly where you run this API call from
 
-# Curl command looping through #s 1-10 to create synthetics API tests on ports 1-10
+# Curl command looping through port #s in ports file to create synthetics API tests
 if [ -f "$FILENAME" ];
     then    
     echo $FILENAME "exists"
