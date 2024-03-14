@@ -40,7 +40,7 @@ if [ -f "$FILENAME" ];
             -H "Content-Type: application/json" \
             -H "DD-API-KEY: ${DD_API_KEY}" \
             -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" \
-            --output testresults/synthetictest-port-$THEPORT.json \
+            --output apicallresults/synthetictest-port-$THEPORT.json \
             -d @- << EOF
             {
             "config": {
