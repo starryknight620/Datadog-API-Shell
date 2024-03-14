@@ -30,6 +30,7 @@ quotas for number of tests)\n"
 if [ -f "$FILENAME" ];
     then    
     echo $FILENAME "exists"
+    mkdir testresults
     echo "\n"
         for THEPORT in `cat $FILENAME`
         do  
@@ -39,6 +40,7 @@ if [ -f "$FILENAME" ];
             -H "Content-Type: application/json" \
             -H "DD-API-KEY: ${DD_API_KEY}" \
             -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" \
+            --output testresults/synthetictest-port-$THEPORT.json \
             -d @- << EOF
             {
             "config": {
@@ -103,4 +105,3 @@ done
 else
     echo $FILENAME "does not exist" >&2
 fi
-
