@@ -2,7 +2,8 @@
 A few handy Shell scripts leveraging the Datadog API and cURL
 
 ##Pre-requisites
--A working terminal with cURL working  
+
+-A working terminal with cURL installed  
 
 -(Optional) jq installed to parse your JSON output  
 
