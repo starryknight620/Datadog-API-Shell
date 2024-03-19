@@ -13,6 +13,6 @@ echo "Your public_IDs are...(did ids.txt come back result in an empty file? make
 curl -sX GET "https://api.datadoghq.com/api/v1/synthetics/tests" \
 -H "Accept: application/json" \
 -H "DD-API-KEY: ${DD_API_KEY}" \
--H "DD-APPLICATION-KEY: ${DD_APP_KEY}" | jq -r '.tests[].public_id' > ids.txt
+-H "DD-APPLICATION-KEY: ${DD_APP_KEY}" | jq -r '.tests[].public_id'  > ids.txt
 echo "\n" 
 

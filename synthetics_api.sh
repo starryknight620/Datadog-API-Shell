@@ -101,10 +101,10 @@ if [ -f "$FILENAME" ];
         "name": "Port test on $THEHOST:$THEPORT" 
         }
 EOF
+ jq . APIresponses/testdetails/synthetictest-port-$THEPORT.json
 done
 else
     echo $FILENAME "does not exist" >&2
 fi
 
-jq . APIresponses/testdetails/synthetictest-port-$THEPORT.json
 
