@@ -14,6 +14,8 @@ echo "in the directory where you are running this from!" "\n"
 
 read -p "Enter a status for the tests (live|paused): `echo '\n> '`" STATUS
 
+echo "Make sure the test(s) you are trying to place in " $STATUS " aren't already in " $STATUS " state!"
+
 ## Create an API test.
 ## Pre-requisites: 
 #curl is working properly where you run this API call from
@@ -21,6 +23,7 @@ read -p "Enter a status for the tests (live|paused): `echo '\n> '`" STATUS
 if [ -f "$FILENAME" ];
 then
     echo $FILENAME "exists"
+    mkdir -p APIresponses/testdetails
     echo "\n"
     # Curl command looping through #s 1-10 to create synthetics API tests on ports 1-10
     for public_id in `cat ids.txt`
@@ -31,12 +34,15 @@ then
             -H "Content-Type: application/json" \
             -H "DD-API-KEY: ${DD_API_KEY}" \
             -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" \
+            --output APIresponses/testdetails/synthetictest_pause-$public_id.json \
             -d @- << EOF
             {
             "new_status": "$STATUS"
             }
 EOF
-        done
+    echo "API Responded with: "
+    jq . APIresponses/testdetails/synthetictest_pause-$public_id.json
+done
 else
     echo $FILENAME "does not exist" >&2
 fi
