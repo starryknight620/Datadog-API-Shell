@@ -11,6 +11,8 @@ read -p "Enter a timeout value for your test: `echo '\n> '`" TIMEOUT
 
 read -p "Enter a filename with the ports (one port # per line) you wish to create tests on: `echo '\n> '`" FILENAME
 
+read -p "How often would you like this test to run? (enter, in seconds: 60 | 300 | 600 | 900 | 1800 | 3600): `echo '\n> '`" TICK
+
 echo "This test won't work if you don't have a valid file called" $FILENAME 
 echo "with the port numbers entered correctly"
 echo "\n"
@@ -68,7 +70,7 @@ if [ -f "$FILENAME" ];
             "new_host_delay": 300,
             "include_tags": true
             },
-            "tick_every": 60
+            "tick_every": $TICK
         },
         "locations": [
             "aws:af-south-1",
