@@ -14,7 +14,7 @@ echo "in the directory where you are running this from!" "\n"
 
 read -p "Enter a status for the tests (live|paused): `echo '\n> '`" STATUS
 
-echo "Make sure the test(s) you are trying to place in " $STATUS " aren't already in " $STATUS " state!"
+echo "Make sure the test(s) you are trying to " $STATUS " aren't already in " $STATUS " state!"
 
 ## Create an API test.
 ## Pre-requisites: 
@@ -40,7 +40,6 @@ then
             "new_status": "$STATUS"
             }
 EOF
-    echo "API Responded with: "
     jq . APIresponses/testdetails/synthetictest_pause-$public_id.json
 done
 else
