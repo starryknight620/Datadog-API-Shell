@@ -106,7 +106,7 @@ EOF
  jq . APIresponses/testdetails/synthetictest-port-$THEPORT.json
 done
 else
-    echo $FILENAME "does not exist" >&2
+    echo $FILENAME "does not exist...exiting..." >&2
 fi
 
 
