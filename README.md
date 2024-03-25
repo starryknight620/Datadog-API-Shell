@@ -23,4 +23,4 @@ A few handy Shell scripts leveraging the Datadog API and cURL
 brew install jq
 ```
 
--Once you've cloned or forked this repo, please update the API endpoint to your respective Datadog site. i.e. app.datadoghq.com, app.datadoghq.eu, <custom-subdomain>.datadoghq.com, <custom-subdomain>.datadoghq.eu
+-Once you've cloned or forked this repo, please update the API endpoint to your respective Datadog site. i.e. app.datadoghq.com, app.datadoghq.eu, {custom-subdomain}.datadoghq.com, {custom-subdomain}.datadoghq.eu
