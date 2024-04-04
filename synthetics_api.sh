@@ -37,7 +37,7 @@ if [ -f "$FILENAME" ];
         for THEPORT in `cat $FILENAME`
         do  
             echo "Creating Synthetic API TCP test #" $THEPORT "\n"
-            curl -X POST "https://naveen.datadoghq.com/api/v1/synthetics/tests/api" \
+            curl -X POST "https://api.datadoghq.com/api/v1/synthetics/tests/api" \
             -H "Accept: application/json" \
             -H "Content-Type: application/json" \
             -H "DD-API-KEY: ${DD_API_KEY}" \
