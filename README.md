@@ -25,5 +25,3 @@ chmod +x synthetics_api.sh
 chmod +x synthetics_bulk_pause.sh
 
 ```
-
--Once you've cloned or forked this repo, please update the API endpoint to your respective Datadog site. i.e. app.datadoghq.com, app.datadoghq.eu, {custom-subdomain}.datadoghq.com, {custom-subdomain}.datadoghq.eu
