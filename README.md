@@ -1,6 +1,10 @@
 # Datadog-API-Shell
 A few handy Shell scripts leveraging the Datadog API and cURL
 
+```
+git clone git@github.com:starryknight620/Datadog-API-Shell.git
+```
+
 ##Pre-requisites
 
 -A working terminal with cURL installed  
