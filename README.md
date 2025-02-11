@@ -1,5 +1,5 @@
 # Datadog-API-Shell
-A few handy Shell scripts leveraging the Datadog API and cURL
+A few handy Shell scripts leveraging the Datadog API and cURL commands. The examples provided are for the [Datadog Synthetics API](https://docs.datadoghq.com/api/latest/synthetics/) endpoint. These may be modified for other Datadog APIs. 
 
 ```
 git clone git@github.com:starryknight620/Datadog-API-Shell.git
@@ -14,6 +14,7 @@ git clone git@github.com:starryknight620/Datadog-API-Shell.git
 - `DD_API_KEY` [API Keys](https://app.datadoghq.com/organization-settings/api-keys)  
 - `DD_APP_KEY`* [Application Keys](https://app.datadoghq.com/organization-settings/application-keys)
 - *The Application Key is _not_ the same as the application ID used by Datadog RUM SDKs
+- Make sure the API Keys and Application Keys have the correct permissions
 
 - [jq](https://jqlang.github.io/jq/) installed to parse your JSON output, see below for install steps with [brew](https://brew.sh/)
 
